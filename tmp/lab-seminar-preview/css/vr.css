@@ -1,0 +1,11 @@
+/* VRゼミ固有の調整。共通クラスの色や構造はseminar.css側に保持。 */
+.vr-hero{padding-bottom:36px}
+.vr-hero__grid{display:grid;grid-template-columns:.93fr 1.07fr;align-items:center;gap:48px;position:relative;z-index:1}
+.vr-hero h1{font-size:clamp(39px,4.6vw,65px);line-height:1.32}
+.vr-hero__photo{min-height:445px;box-shadow:0 35px 75px #0004;transform:translateY(30px)}
+.vr-hero__annotation{font-size:12px;color:#aabfd4;margin-top:32px}
+.vr-section-text{max-width:690px}.vr-section-text p{line-height:2;color:#516579}
+.vr-focus{background:#e9f0f9;border-radius:15px;padding:38px 43px;border-left:5px solid #2758c6}.vr-focus h3{font-size:25px;margin:0 0 15px}.vr-focus p{font-size:14px;color:#425c78;margin:0}
+.vr-caption{font-size:12px;color:#78889b;margin-top:10px}
+@media(max-width:900px){.vr-hero__grid{gap:20px}.vr-hero__photo{min-height:335px}}
+@media(max-width:700px){.vr-hero__grid{grid-template-columns:1fr}.vr-hero__photo{min-height:290px;transform:none}.vr-hero__annotation{margin-top:20px}.vr-focus{padding:27px 24px}}
