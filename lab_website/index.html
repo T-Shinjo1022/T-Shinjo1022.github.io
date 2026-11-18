@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="山口大学 長研究室。私たちの『見える』を、体験から考える。視覚・映像・感性に関わる研究室のホームページ。">
+        <title>長研究室 | 見える、その先へ。</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="head-inner">
+                <a class="brand" href="#home" aria-label="長研究室 ホームへ"><span class="brand-mark" aria-hidden="true"></span><span><strong>長研究室</strong><small>OSA LABORATORY · YAMAGUCHI UNIVERSITY</small></span></a>
+                <button class="mobile-button" id="menuButton" aria-expanded="false" aria-controls="navigation" aria-label="メニューを開く">☰</button>
+                <nav class="nav" id="navigation" aria-label="メインナビゲーション">
+                    <a href="#home" class="nav-active">HOME</a>
+                    <a href="lab.html">研究室紹介</a>
+                    <a href="members.html">メンバー</a>
+                    <a href="seminar.html">ゼミ紹介</a>
+                    <a href="events.html">イベント</a>
+                    <a href="access.html">アクセス</a>
+                    <a href="students.html" class="nav-cta">配属希望の方へ ↗</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero" id="home">
+                <div class="container hero-grid">
+                    <div>
+                        <span class="eyebrow"><i></i> PERCEPTION × VISUAL TECHNOLOGY</span>
+                        <h1>あなたの<br>「<em>見える</em>」は、<br>本当に正しいですか？</h1>
+                        <p>同じ大きさなのに、違って見える。<br>動いていないのに、動いて見える。<br>「見る」という身近な不思議から、私たちは人の知覚と映像の可能性を探ります。</p>
+                        <div class="hero-actions">
+                            <a class="btn-primary" href="#experience">錯視を体験する <span aria-hidden="true">↗</span></a>
+                            <a class="btn-ghost" href="#more-illusions">ほかの見え方を見る ↓</a>
+                        </div>
+                        <div class="scroll-hint">SCROLL TO EXPLORE</div>
+                    </div>
+                    <div class="hero-media-wrapper">
+                        <div class="hero-card">
+                            <div class="hero-scene" id="heroScene">
+                                <div class="hero-chip">VISUAL PERCEPTION / 01</div>
+                                <div class="hero-caption">
+                                    <small>SAME PIXELS. DIFFERENT IMPRESSION.</small>
+                                    同じ大きさが、違って見える。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-bubble">どちらの直方体が大きく見える？<br><strong>▼ 下で体験してみよう</strong></div>
+                    </div>
+                </div>
+            </section>
+            <section class="intro-line">
+                <div class="container">
+                    <p><b>「見る」は、ただ目に映すことではない。</b>　私たちの脳は、奥行きや周囲の情報から世界を解釈しています。</p>
+                    <span class="tiny">DISCOVER YOUR PERCEPTION</span>
+                </div>
+            </section>
+            <section class="section experience" id="experience">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="micro">01 / INTERACTIVE EXPERIENCE</div>
+                        <h2>その「大きさ」、<span class="blue-span">本当に同じ？</span></h2>
+                        <p>2本の直方体は画面上では同じ高さ。廊下の奥行きが、あなたの見え方を変えるかもしれません。</p>
+                    </div>
+                    <div class="exp-card">
+                        <div class="exp-top">
+                            <div>
+                                <h3>遠近感と大きさの錯視</h3>
+                                <p>Perspective &amp; size perception</p>
+                            </div>
+                            <span class="exp-tag">● INTERACTIVE 3D</span>
+                        </div>
+                        <div class="exp-canvas-wrap" id="demoStage">
+                            <div class="exp-loading" id="loading">3D空間を読み込み中…</div>
+                            <div class="scene-title" id="sceneTitle">廊下の背景あり</div>
+                        </div>
+                        <div class="exp-below">
+                            <div>
+                                <div class="micro control-label-header">背景を切り替える</div>
+                                <div class="switches">
+                                    <button class="pill active" id="withBackground" aria-pressed="true">廊下あり</button>
+                                    <button class="pill" id="withoutBackground" aria-pressed="false">背景なし</button>
+                                    <button class="pill" id="toggleMatch" aria-pressed="true">表示高さをそろえる ✓</button>
+                                </div>
+                                <p class="muted" id="modeNote">背景を消すと、奥行きの手がかりによる印象の変化を比較できます。</p>
+                            </div>
+                            <div class="controls">
+                                <div class="control">
+                                    <label for="nearRange">青い直方体の距離 <output id="nearOut">5.0 m</output></label>
+                                    <input type="range" id="nearRange" min="3" max="9" step="0.1" value="5">
+                                </div>
+                                <div class="control">
+                                    <label for="farRange">オレンジの直方体の距離 <output id="farOut">13.0 m</output></label>
+                                    <input type="range" id="farRange" min="10" max="22" step="0.1" value="13">
+                                </div>
+                                <div class="control">
+                                    <label for="pxRange">画面上の高さ <output id="pxOut">130 px</output></label>
+                                    <input type="range" id="pxRange" min="70" max="230" step="5" value="130">
+                                </div>
+                                <div class="control">
+                                    <label for="fovRange">カメラ画角 <output id="fovOut">65°</output></label>
+                                    <input type="range" id="fovRange" min="48" max="82" step="1" value="65">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="exp-footer">
+                            <p id="experimentStatus" aria-live="polite">画面上の高さ：両方とも130 px（1280 × 720基準）</p>
+                            <div class="experiment-actions">
+                                <button class="small-action" id="resetDemo">↺ 初期化</button>
+                                <button class="small-action" id="saveDemo">↓ 画像を保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section more" id="more-illusions">
+                <div class="container">
+                    <div class="section-head">
+                        <div class="micro">02 / MORE ILLUSIONS</div>
+                        <h2>まだある、<span class="blue-span">見え方の不思議。</span></h2>
+                        <p>少し操作するだけで、目に映るものの印象が変わります。</p>
+                    </div>
+                    <div class="illusion-grid">
+                        <article class="illusion-card">
+                            <div class="illusion-visual">
+                                <div class="ebbing">
+                                    <div class="cluster one" id="clusterOne">
+                                        <span class="center"></span>
+                                    </div>
+                                    <div class="cluster two" id="clusterTwo">
+                                        <span class="center"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="illusion-body">
+                                <div class="index">ILLUSION 02</div>
+                                <h3>周囲によって変わる大きさ</h3>
+                                <p>中央のオレンジ色の円は、左右で同じ大きさです。</p>
+                                <button class="mini-btn" id="ebbingToggle" aria-pressed="false">周囲の円を隠す ↗</button>
+                            </div>
+                        </article>
+                        <article class="illusion-card">
+                            <div class="illusion-visual">
+                                <div class="brightness" id="brightness">
+                                    <div class="left">
+                                        <span></span>
+                                    </div>
+                                    <div class="right">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="illusion-body">
+                                <div class="index">ILLUSION 03</div>
+                                <h3>背景によって変わる明るさ</h3>
+                                <p>中央のグレーは同じ色。周囲の色で違って見えるでしょうか。</p>
+                                <button class="mini-btn" id="brightnessToggle" aria-pressed="false">背景色をそろえる ↗</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="closing">
+                <div class="container closing-grid">
+                    <div>
+                        <div class="micro closing-eyebrow">EXPLORE OSA LABORATORY</div>
+                        <h2>「見える」の先に、研究がある。</h2>
+                        <p>人の視覚や感性を考える研究室について、もっと知ってみませんか。</p>
+                    </div>
+                    <a class="btn-ghost" href="lab.html">研究室紹介へ ↗</a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container foot">
+                <div>
+                    <strong>長研究室　OSA LABORATORY</strong>
+                    <p>山口大学 · 知能情報工学科</p>
+                </div>
+                <small>© 2026 Osa Laboratory. Home page prototype.</small>
+            </div>
+        </footer>
+        <script src="js/main.js" defer="defer"></script>
+        <script type="module" src="js/illusion3d.js"></script>
+    </body>
+</html>
