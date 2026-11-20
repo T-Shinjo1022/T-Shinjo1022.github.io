@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研究室紹介 | Osa Laboratory</title>
+  <!-- A担当の共通CSS（style.css）を先に読み込む -->
+  <link rel="stylesheet" href="style.css">
+  <!-- B担当：研究室紹介ページ固有CSS -->
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       ▼ 共通ヘッダー（style.cssのクラスを使用・A担当のindex.htmlと統一）
+       ========================================================= -->
+  <header>
+    <div class="head-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>Osa Laboratory</strong>
+          <small>[要確認：大学名・学部学科などのサブ表記]</small>
+        </span>
+      </a>
+
+      <button type="button" class="mobile-button" aria-label="メニューを開く" onclick="document.querySelector('.nav').classList.toggle('open')">
+        MENU
+      </button>
+
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="about.html" class="nav-active">研究室紹介</a>
+        <a href="seminar.html">ゼミ紹介</a>
+        <a href="members.html">メンバー</a>
+        <a href="publications.html">論文・業績</a>
+        <a href="access.html">アクセス</a>
+        <a href="admission.html" class="nav-cta">配属希望者へ</a>
+      </nav>
+    </div>
+  </header>
+  <!-- ▲ 共通ヘッダーここまで -->
+
+  <main>
+    <!-- ページヘッダー（style.cssの .hero / .eyebrow の雰囲気を継承） -->
+    <section class="lab-page-hero">
+      <div class="container">
+        <span class="eyebrow"><i></i>ABOUT LABORATORY</span>
+        <h1 class="lab-page-title">研究室<span class="blue-span">紹介</span></h1>
+        <p class="lab-page-catch">
+          <!-- キャッチコピー差し替え箇所 -->
+          理論と実践をつなぎ、新しい体験と表現を探求する。
+        </p>
+
+        <figure class="lab-hero-card">
+          <div class="lab-hero-media">
+            <!-- 画像差し替え箇所：公開許可確認済みのメイン写真 -->
+            <img src="images/lab-hero-placeholder.jpg" alt="[要確認：研究室の全体風景や集合写真の説明]">
+          </div>
+          <figcaption class="lab-caption">[要確認：写真のキャプション]</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ページ内目次 -->
+    <nav class="lab-toc" aria-label="ページ内目次">
+      <div class="container">
+        <ul class="lab-toc-list">
+          <li><a href="#purpose">01. 研究室の目的と方針</a></li>
+          <li><a href="#themes">02. 研究分野とテーマ</a></li>
+          <li><a href="#environment">03. 設備・研究環境</a></li>
+          <li><a href="#workflow">04. 研究の進め方</a></li>
+          <li><a href="#atmosphere">05. 研究室の雰囲気</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 1. 研究室の目的と方針 -->
+    <section id="purpose" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="micro">01 / PURPOSE &amp; POLICY</span>
+          <h2>研究室の目的と<span class="blue-span">方針</span></h2>
+          <p>[要確認：このセクションの短いリード文]</p>
+        </div>
+
+        <div class="lab-split">
+          <div class="lab-split-text">
+            <p>
+              [要確認：研究室が目指す目的・理念・研究方針の正式な紹介文を記載します。専門用語を使う場合は、学生にも分かりやすい短い補足説明を添えます。]
+            </p>
+            <p>
+              [要確認：社会や学術分野における位置づけ、育成したい人材像などの補足があれば記載します。]
+            </p>
+          </div>
+          <figure class="lab-media-card">
+            <img src="images/lab-purpose-placeholder.jpg" alt="[要確認：研究方針を表す図または活動写真の説明]">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 研究分野とテーマ -->
+    <section id="themes" class="section lab-section-pale">
+      <div class="container">
+        <div class="section-head">
+          <span class="micro">02 / RESEARCH THEMES</span>
+          <h2>研究分野と<span class="blue-span">テーマ</span></h2>
+          <p>[要確認：研究室全体で取り組んでいる研究領域の概要説明を記載します。]</p>
+        </div>
+
+        <!-- 各ゼミ・研究領域カード（役割分担表の4ゼミ構成をベースに仮配置） -->
+        <div class="lab-grid">
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/theme-vr-placeholder.jpg" alt="[要確認：VRゼミの研究イメージ]">
+            </figure>
+            <div class="lab-card-body">
+              <span class="micro">SEMINAR 01</span>
+              <h3>VRゼミ（仮）</h3>
+              <p>[要確認：VRゼミの具体的な研究テーマと概要説明]</p>
+              <a href="seminar-vr.html" class="lab-card-link">詳しく見る →</a>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/theme-ms-placeholder.jpg" alt="[要確認：モーションシャープニングゼミの研究イメージ]">
+            </figure>
+            <div class="lab-card-body">
+              <span class="micro">SEMINAR 02</span>
+              <h3>モーションシャープニングゼミ（仮）</h3>
+              <p>[要確認：モーションシャープニングゼミの具体的な研究テーマと概要説明]</p>
+              <a href="seminar-motion-sharpening.html" class="lab-card-link">詳しく見る →</a>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/theme-design-placeholder.jpg" alt="[要確認：デザインゼミの研究イメージ]">
+            </figure>
+            <div class="lab-card-body">
+              <span class="micro">SEMINAR 03</span>
+              <h3>デザインゼミ（仮）</h3>
+              <p>[要確認：デザインゼミの具体的な研究テーマと概要説明]</p>
+              <a href="seminar-design.html" class="lab-card-link">詳しく見る →</a>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/theme-motion-placeholder.jpg" alt="[要確認：モーションゼミの研究イメージ]">
+            </figure>
+            <div class="lab-card-body">
+              <span class="micro">SEMINAR 04</span>
+              <h3>モーションゼミ（仮）</h3>
+              <p>[要確認：モーションゼミの具体的な研究テーマと概要説明]</p>
+              <a href="seminar-motion.html" class="lab-card-link">詳しく見る →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- E担当（論文・研究業績）との連携リンク -->
+        <div class="lab-center-action">
+          <a href="publications.html" class="btn-ghost">論文・研究業績一覧を見る →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 設備・研究環境 -->
+    <section id="environment" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="micro">03 / FACILITIES &amp; ENVIRONMENT</span>
+          <h2>設備・<span class="blue-span">研究環境</span></h2>
+          <p>[要確認：研究活動に使用する実験スペースや開発環境の概要を記載します。]</p>
+        </div>
+
+        <div class="lab-grid lab-grid-3">
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/env-01-placeholder.jpg" alt="[要確認：設備1の写真説明]">
+            </figure>
+            <div class="lab-card-body">
+              <h3>[要確認：設備・機材名1]</h3>
+              <p>[要確認：用途や特徴の短い説明]</p>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/env-02-placeholder.jpg" alt="[要確認：設備2の写真説明]">
+            </figure>
+            <div class="lab-card-body">
+              <h3>[要確認：設備・機材名2]</h3>
+              <p>[要確認：用途や特徴の短い説明]</p>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <figure class="lab-card-media">
+              <img src="images/env-03-placeholder.jpg" alt="[要確認：ワークスペースの写真説明]">
+            </figure>
+            <div class="lab-card-body">
+              <h3>[要確認：ワークスペース・開発環境]</h3>
+              <p>[要確認：座席や共有スペース、開発ツールなどの説明]</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 研究の進め方 -->
+    <section id="workflow" class="section lab-section-pale">
+      <div class="container">
+        <div class="section-head">
+          <span class="micro">04 / RESEARCH WORKFLOW</span>
+          <h2>研究の<span class="blue-span">進め方</span></h2>
+          <p>[要確認：ゼミの頻度や年間スケジュールの概要]</p>
+        </div>
+
+        <div class="lab-split">
+          <div class="lab-workflow-box">
+            <dl class="lab-dl">
+              <div class="lab-dl-item">
+                <dt>ゼミ・ミーティング</dt>
+                <dd>[要確認：全体ゼミやグループゼミの頻度、発表形式などの事実情報]</dd>
+              </div>
+              <div class="lab-dl-item">
+                <dt>指導体制</dt>
+                <dd>[要確認：教員や先輩学生からのサポート体制、相談方法など]</dd>
+              </div>
+              <div class="lab-dl-item">
+                <dt>年間スケジュール</dt>
+                <dd>[要確認：配属後のテーマ決定、中間発表、学会発表、卒業論文・修士論文の流れ]</dd>
+              </div>
+            </dl>
+          </div>
+          <figure class="lab-media-card">
+            <img src="images/lab-workflow-placeholder.jpg" alt="[要確認：ゼミ発表や議論の様子]">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 研究室の雰囲気 -->
+    <section id="atmosphere" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="micro">05 / LAB ATMOSPHERE</span>
+          <h2>研究室の<span class="blue-span">雰囲気</span></h2>
+          <p>[要確認：日常の過ごし方、学生同士の交流、研究室内の雰囲気に関する事実ベースの説明]</p>
+        </div>
+
+        <!-- 活動写真ギャラリー（公開許可確認済みの写真のみ掲載） -->
+        <div class="lab-grid">
+          <figure class="lab-media-card">
+            <img src="images/life-01-placeholder.jpg" alt="[要確認：日常の研究風景の説明]">
+            <figcaption class="lab-caption">[要確認：写真1の説明]</figcaption>
+          </figure>
+          <figure class="lab-media-card">
+            <img src="images/life-02-placeholder.jpg" alt="[要確認：グループワークや議論の説明]">
+            <figcaption class="lab-caption">[要確認：写真2の説明]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 下部誘導帯（style.cssの .closing クラスを再利用） -->
+    <section class="closing">
+      <div class="container closing-grid">
+        <div>
+          <span class="micro closing-eyebrow">JOIN OUR LAB</span>
+          <h2>研究室への配属・見学をご希望の方へ</h2>
+          <p>配属スケジュールや研究室見学の案内、年間イベントの様子はこちらをご覧ください。</p>
+        </div>
+        <div class="hero-actions">
+          <a href="admission.html" class="btn-ghost">配属希望者向けページ</a>
+          <a href="events.html" class="btn-primary">イベント一覧</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       ▼ 共通フッター（style.cssの footer / .foot クラスを使用）
+       ========================================================= -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <strong>Osa Laboratory</strong>
+        <p>[要確認：大学名・学部学科・キャンパス所在地]</p>
+      </div>
+      <small>&copy; [要確認：年] Osa Laboratory</small>
+    </div>
+  </footer>
+  <!-- ▲ 共通フッターここまで -->
+
+</body>
+</html>
