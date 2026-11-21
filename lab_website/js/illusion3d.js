@@ -32,7 +32,7 @@ try {
 
     const camera = new THREE.PerspectiveCamera(65, 16 / 9, 0.1, 100);
     const heroCamera = new THREE.PerspectiveCamera(65, 16 / 10, 0.1, 100);
-    const CAMERA_HEIGHT = 1.8;
+    const CAMERA_HEIGHT = 1.65;
     for (const cam of [camera, heroCamera]) {
         cam.position.set(0, CAMERA_HEIGHT, 0);
         cam.lookAt(0, CAMERA_HEIGHT, -12);
@@ -135,19 +135,40 @@ try {
     let background = true;
     let match = true;
 
-    // The faces are centered at the SAME screen height. Their centers are
-    // offset by half a face width, so their silhouettes overlap by ~50%.
-    // Position offsets are converted from pixels to world units at each depth.
-    function positionFace(face, copy, depth, apparentPx, sign, focalPx) {
+    // Initially, preserve the original layout: blue at x=-1.55 m and orange
+    // at x=+1.55 m, both standing on the floor. Drag either front face in the
+    // experiment canvas to move it into a partially overlapping position.
+    const initialPositions = {
+        blue: { x: -1.55, bottom: 0 },
+        orange: { x: 1.55, bottom: 0 }
+    };
+    const positions = {
+        blue: { ...initialPositions.blue },
+        orange: { ...initialPositions.orange }
+    };
+    const visibleFaces = {};
+
+    function positionFace(face, copy, depth, apparentPx, key, focalPx) {
         const worldHeight = apparentPx * depth / focalPx;
         const worldWidth = worldHeight * 0.35;
-        const horizontalOffsetPx = apparentPx * 0.35 * 0.25;
-        const x = sign * horizontalOffsetPx * depth / focalPx;
-        const centerY = CAMERA_HEIGHT;
+        const position = positions[key];
+        const horizontalMargin = 0.12;
+        const verticalMargin = 0.12;
+        // Keep the full face inside the hallway, including while dragging.
+        position.x = THREE.MathUtils.clamp(
+            position.x,
+            -hallW / 2 + worldWidth / 2 + horizontalMargin,
+            hallW / 2 - worldWidth / 2 - horizontalMargin
+        );
+        position.bottom = THREE.MathUtils.clamp(
+            position.bottom, 0, Math.max(0, hallH - worldHeight - verticalMargin)
+        );
+        const centerY = position.bottom + worldHeight / 2;
         for (const group of [face, copy]) {
-            group.position.set(x, centerY, -depth);
+            group.position.set(position.x, centerY, -depth);
             group.scale.set(worldWidth, worldHeight, 1);
         }
+        visibleFaces[key] = { depth, worldHeight, worldWidth, x: position.x, centerY };
     }
 
     function fitCanvas(targetRenderer, container, cam) {
@@ -179,16 +200,16 @@ try {
         // Keep both faces entirely inside the hallway, even at the farthest
         // slider position and the widest FOV. Scaling both together preserves
         // equal apparent heights in the matching mode.
-        const margin = 0.25;
-        const maxWorldHeight = 2 * Math.min(CAMERA_HEIGHT - margin, hallH - CAMERA_HEIGHT - margin);
+        const margin = 0.12;
+        const maxWorldHeight = hallH - margin;
         const largestDepthForHeight = match ? farDistance : nearDistance;
         const maximumScreenPx = maxWorldHeight * focalPx / largestDepthForHeight;
         const actualScreenPx = Math.min(requestedScreenPx, maximumScreenPx);
         const capped = actualScreenPx < requestedScreenPx - 0.01;
 
-        positionFace(blue, emptyBlue, nearDistance, actualScreenPx, -1, focalPx);
+        positionFace(blue, emptyBlue, nearDistance, actualScreenPx, 'blue', focalPx);
         const farApparentPx = match ? actualScreenPx : actualScreenPx * nearDistance / farDistance;
-        positionFace(orange, emptyOrange, farDistance, farApparentPx, 1, focalPx);
+        positionFace(orange, emptyOrange, farDistance, farApparentPx, 'orange', focalPx);
 
         for (const [key, value, suffix, digits] of [
             ['near', nearDistance, ' m', 1],
@@ -211,6 +232,91 @@ try {
         renderer.render(background ? scene : emptyScene, camera);
         heroRenderer.render(scene, heroCamera);
     }
+
+    // Drag interaction: the two rectangles begin in their original separated
+    // positions. A user can drag either one horizontally or vertically to
+    // compare it against the other, including overlapping their front faces.
+    // Screen-pixel movement is converted to world units at the face's depth.
+    const canvas = renderer.domElement;
+    canvas.style.touchAction = 'none';
+    canvas.style.cursor = 'default';
+
+    const dragHint = document.createElement('div');
+    dragHint.textContent = '青・オレンジの直方体をドラッグして重ねられます';
+    dragHint.setAttribute('aria-hidden', 'true');
+    Object.assign(dragHint.style, {
+        position: 'absolute',
+        right: '12px',
+        bottom: '12px',
+        zIndex: '3',
+        pointerEvents: 'none',
+        background: 'rgba(255,255,255,.91)',
+        color: '#284f7f',
+        padding: '7px 10px',
+        borderRadius: '8px',
+        fontSize: '11px',
+        fontWeight: '700',
+        maxWidth: 'calc(100% - 24px)'
+    });
+    stage.append(dragHint);
+
+    function faceAtPointer(event) {
+        const bounds = canvas.getBoundingClientRect();
+        const mouseX = event.clientX - bounds.left;
+        const mouseY = event.clientY - bounds.top;
+        // Check the near (blue) rectangle first: it occludes the far one.
+        for (const key of ['blue', 'orange']) {
+            const face = visibleFaces[key];
+            if (!face) continue;
+            const projected = new THREE.Vector3(face.x, face.centerY, -face.depth).project(camera);
+            const centerX = (projected.x + 1) * bounds.width / 2;
+            const centerY = (1 - projected.y) * bounds.height / 2;
+            const focal = bounds.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+            const width = face.worldWidth * focal / face.depth;
+            const height = face.worldHeight * focal / face.depth;
+            if (Math.abs(mouseX - centerX) <= width / 2 && Math.abs(mouseY - centerY) <= height / 2) {
+                return key;
+            }
+        }
+        return null;
+    }
+
+    let drag = null;
+    canvas.addEventListener('pointerdown', (event) => {
+        const key = faceAtPointer(event);
+        if (!key) return;
+        drag = {
+            key,
+            startX: event.clientX,
+            startY: event.clientY,
+            initialX: positions[key].x,
+            initialBottom: positions[key].bottom,
+            depth: visibleFaces[key].depth
+        };
+        canvas.setPointerCapture(event.pointerId);
+        canvas.style.cursor = 'grabbing';
+        event.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (event) => {
+        if (!drag) {
+            canvas.style.cursor = faceAtPointer(event) ? 'grab' : 'default';
+            return;
+        }
+        const rect = canvas.getBoundingClientRect();
+        const focal = rect.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
+        const pixelsToWorld = drag.depth / focal;
+        positions[drag.key].x = drag.initialX + (event.clientX - drag.startX) * pixelsToWorld;
+        positions[drag.key].bottom = drag.initialBottom - (event.clientY - drag.startY) * pixelsToWorld;
+        render();
+        event.preventDefault();
+    });
+    function stopDragging() {
+        drag = null;
+        canvas.style.cursor = 'default';
+    }
+    canvas.addEventListener('pointerup', stopDragging);
+    canvas.addEventListener('pointercancel', stopDragging);
+    canvas.addEventListener('lostpointercapture', stopDragging);
 
     Object.values(control).forEach(input => input.addEventListener('input', render));
     function active(button, enabled) {
@@ -243,6 +349,10 @@ try {
         control.far.value = 13;
         control.px.value = 130;
         control.fov.value = 65;
+        for (const key of ['blue', 'orange']) {
+            positions[key].x = initialPositions[key].x;
+            positions[key].bottom = initialPositions[key].bottom;
+        }
         background = true;
         match = true;
         active(withBtn, true);
