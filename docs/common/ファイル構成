@@ -2,6 +2,7 @@ lab-website/
 ├── index.html
 ├── about.html
 ├── members.html
+├── seminar.html
 ├── events.html
 ├── join.html
 ├── access.html
@@ -9,7 +10,6 @@ lab-website/
 ├── career.html
 ├── professor.html
 ├── seminar/
-│   ├── index.html
 │   ├── vr.html
 │   ├── design.html
 │   ├── motion.html
