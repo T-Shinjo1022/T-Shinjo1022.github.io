@@ -1,0 +1,45 @@
+/* Seminar pages — shared styles. Existing site-wide style.css is loaded first. */
+.seminar-nav-pending { font-size: 12px; font-weight: 760; color: #48617c; white-space: nowrap; opacity: .65; }
+.seminar-hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 85% 20%, #d8ecff, transparent 48%), linear-gradient(160deg, #f5faff, #eef5ff 60%, #fdfefe); }
+.seminar-hero-inner { position: relative; padding-block: 32px 68px; }
+.seminar-breadcrumb { display: flex; gap: 12px; align-items: center; font-size: 12px; color: var(--sub); margin-bottom: 48px; }
+.seminar-breadcrumb a:hover { color: var(--blue); text-decoration: underline; }
+.seminar-hero h1 { font-size: clamp(32px, 4.5vw, 58px); line-height: 1.35; letter-spacing: -.045em; margin: 20px 0 15px; }
+.seminar-hero h1 em { font-style: normal; color: var(--blue); }
+.seminar-hero p { color: #4d6889; font-size: 15px; line-height: 2; margin: 0 0 26px; }
+.seminar-mobile-break { display: none; }
+.seminar-list-section { padding: 72px 0 86px; scroll-margin-top: 90px; }
+.seminar-list-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.seminar-list-heading h2, .seminar-next h2 { font-size: clamp(26px, 3vw, 38px); line-height: 1.4; letter-spacing: -.035em; margin: 8px 0 0; }
+.seminar-list-heading p, .seminar-next p { font-size: 14px; color: var(--sub); margin: 0; }
+.seminar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.seminar-card { display: flex; flex-direction: column; border: 1px solid #dce8f7; border-radius: 22px; overflow: hidden; background: #fff; box-shadow: 0 13px 30px #1c4a7f0b; }
+.seminar-media { width: 100%; aspect-ratio: 16 / 8; display: block; object-fit: cover; }
+.seminar-media-placeholder { position: relative; display: grid; place-items: center; overflow: hidden; background: linear-gradient(140deg, #e7f0fc, #f6f9fd); border-bottom: 1px solid #dce8f7; }
+.seminar-media-number { position: absolute; left: 20px; bottom: -27px; font-size: clamp(80px, 12vw, 145px); line-height: 1; font-weight: 850; color: #cbdff6; user-select: none; }
+.seminar-media-label { position: relative; text-align: center; font-size: 14px; font-weight: 750; color: #486789; padding: 12px 18px; background: #ffffffd9; border-radius: 12px; }
+.seminar-media-label small { font-weight: 500; font-size: 11px; }
+.seminar-card-body { display: flex; flex-direction: column; flex: 1; padding: 24px 26px; }
+.seminar-card-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.seminar-topic { font-size: 11px; color: #21518b; background: #edf5ff; padding: 4px 10px; border-radius: 999px; }
+.seminar-card h3 { font-size: clamp(19px, 2vw, 24px); line-height: 1.45; margin: 12px 0 8px; overflow-wrap: anywhere; }
+.seminar-card p { font-size: 14px; color: var(--sub); margin: 0 0 24px; }
+.seminar-detail-link, .seminar-detail-pending { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 750; }
+.seminar-detail-link { color: var(--blue); }
+.seminar-detail-link:hover { text-decoration: underline; }
+.seminar-detail-pending { color: #60768f; }
+.seminar-next { background: #f1f7ff; padding: 52px 0; }
+.seminar-next-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.seminar-next h2 { font-size: clamp(22px, 2.5vw, 30px); margin-bottom: 10px; }
+.seminar-next .btn-ghost { flex-shrink: 0; }
+@media (max-width: 1000px) { .seminar-nav-pending { font-size: 11px; } }
+@media (max-width: 780px) {
+    .seminar-nav-pending { padding: 12px 5px; font-size: 13px; }
+    .seminar-hero-inner { padding-block: 24px 48px; }
+    .seminar-breadcrumb { margin-bottom: 32px; }
+    .seminar-list-section { padding: 48px 0 60px; }
+    .seminar-list-heading, .seminar-next-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .seminar-grid { grid-template-columns: 1fr; gap: 18px; }
+    .seminar-card-body { padding: 20px; }
+    .seminar-mobile-break { display: initial; }
+}
