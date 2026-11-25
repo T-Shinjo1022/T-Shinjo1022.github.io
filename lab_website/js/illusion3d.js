@@ -345,7 +345,7 @@ try {
         render();
     });
     document.getElementById('resetDemo').addEventListener('click', () => {
-        control.near.value = 5;
+        control.near.value = 4;
         control.far.value = 13;
         control.px.value = 130;
         control.fov.value = 65;
