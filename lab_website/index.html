@@ -3,9 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="description" content="山口大学 長研究室。私たちの『見える』を、体験から考える。視覚・映像・感性に関わる研究室のホームページ。">
+        <meta name="description" content="山口大学 長研究室。大きさと角度の見え方を体験し、人の知覚と映像について考える。">
         <title>長研究室 | 見える、その先へ。</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
         <header>
@@ -29,10 +30,10 @@
                     <div>
                         <span class="eyebrow"><i></i> PERCEPTION × VISUAL TECHNOLOGY</span>
                         <h1>あなたの<br>「<em>見える</em>」は、<br>本当に正しいですか？</h1>
-                        <p>同じ大きさなのに、違って見える。<br>動いていないのに、動いて見える。<br>「見る」という身近な不思議から、私たちは人の知覚と映像の可能性を探ります。</p>
+                        <p>同じ大きさなのに、違って見える。<br>同じ角度でも、周囲の情報によって印象が変わる。<br>「見る」という身近な不思議から、私たちは人の知覚と映像の可能性を探ります。</p>
                         <div class="hero-actions">
                             <a class="btn-primary" href="#experience">錯視を体験する <span aria-hidden="true">↗</span></a>
-                            <a class="btn-ghost" href="#more-illusions">ほかの見え方を見る ↓</a>
+                            <a class="btn-ghost" href="#angle-illusion">角度の錯視を見る ↓</a>
                         </div>
                         <div class="scroll-hint">SCROLL TO EXPLORE</div>
                     </div>
@@ -61,7 +62,7 @@
                     <div class="section-head">
                         <div class="micro">01 / INTERACTIVE EXPERIENCE</div>
                         <h2>その「大きさ」、<span class="blue-span">本当に同じ？</span></h2>
-                        <p>2本の直方体は画面上では同じ高さ。廊下の奥行きが、あなたの見え方を変えるかもしれません。</p>
+                        <p>2本の直方体は初期状態では画面上で同じ高さ。廊下の奥行きが、あなたの見え方を変えるかもしれません。</p>
                     </div>
                     <div class="exp-card">
                         <div class="exp-top">
@@ -87,12 +88,12 @@
                             </div>
                             <div class="controls">
                                 <div class="control">
-                                    <label for="nearRange">青い直方体の距離 <output id="nearOut">5.0 m</output></label>
+                                    <label for="nearRange">青い直方体の距離 <output id="nearOut">4.0 m</output></label>
                                     <input type="range" id="nearRange" min="3" max="9" step="0.1" value="4">
                                 </div>
                                 <div class="control">
                                     <label for="farRange">オレンジの直方体の距離 <output id="farOut">13.0 m</output></label>
-                                    <input type="range" id="farRange" min="10" max="22" step="0.1" value="13">
+                                    <input type="range" id="farRange" min="9" max="22" step="0.1" value="13">
                                 </div>
                                 <div class="control">
                                     <label for="pxRange">画面上の高さ <output id="pxOut">130 px</output></label>
@@ -112,53 +113,46 @@
                             </div>
                         </div>
                     </div>
+                    <aside class="home-research-note">
+                        <div class="micro">研究へのつながり</div>
+                        <h3>大きさの恒常性と奥行き知覚</h3>
+                        <p>距離によって網膜に映る像の大きさが変わっても、物体の大きさをある程度一定に感じる性質を「大きさの恒常性」といいます。この体験では、画面上の大きさをそろえた対象が、奥行きの手がかりによってどう見えるかを比較します。実空間と映像での大きさの感じ方を考えるきっかけになります。</p>
+                    </aside>
                 </div>
             </section>
-            <section class="section more" id="more-illusions">
+            <!-- 道路画像の角度錯視。画像は元の比率を維持して表示する。 -->
+            <section class="section more home-angle" id="angle-illusion">
                 <div class="container">
                     <div class="section-head">
-                        <div class="micro">02 / MORE ILLUSIONS</div>
-                        <h2>まだある、<span class="blue-span">見え方の不思議。</span></h2>
-                        <p>少し操作するだけで、目に映るものの印象が変わります。</p>
+                        <div class="micro">02 / ANGLE PERCEPTION</div>
+                        <h2>この角度、<span class="blue-span">何度に見えますか？</span></h2>
+                        <p>道路の奥行きや周囲の風景を手がかりに、画像に示された角度を考えてみましょう。</p>
                     </div>
-                    <div class="illusion-grid">
-                        <article class="illusion-card">
-                            <div class="illusion-visual">
-                                <div class="ebbing">
-                                    <div class="cluster one" id="clusterOne">
-                                        <span class="center"></span>
-                                    </div>
-                                    <div class="cluster two" id="clusterTwo">
-                                        <span class="center"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="illusion-body">
-                                <div class="index">ILLUSION 02</div>
-                                <h3>周囲によって変わる大きさ</h3>
-                                <p>中央のオレンジ色の円は、左右で同じ大きさです。</p>
-                                <button class="mini-btn" id="ebbingToggle" aria-pressed="false">周囲の円を隠す ↗</button>
-                            </div>
-                        </article>
-                        <article class="illusion-card">
-                            <div class="illusion-visual">
-                                <div class="brightness" id="brightness">
-                                    <div class="left">
-                                        <span></span>
-                                    </div>
-                                    <div class="right">
-                                        <span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="illusion-body">
-                                <div class="index">ILLUSION 03</div>
-                                <h3>背景によって変わる明るさ</h3>
-                                <p>中央のグレーは同じ色。周囲の色で違って見えるでしょうか。</p>
-                                <button class="mini-btn" id="brightnessToggle" aria-pressed="false">背景色をそろえる ↗</button>
-                            </div>
-                        </article>
-                    </div>
+                    <article class="exp-card home-angle-card">
+                        <figure class="home-angle-figure">
+                            <img src="images/home/road-angle.png" width="400" height="275" alt="奥へ伸びる道路の写真。手前に黒い弧と疑問符が描かれている。">
+                            <figcaption>道路画像に示された黒い弧の角度に注目してください。</figcaption>
+                        </figure>
+                        <div class="home-angle-content">
+                            <div class="micro">角度の錯視</div>
+                            <h3>鋭角？ 直角？ それとも鈍角？</h3>
+                            <p>まずは直感で考えてみてください。道路のように奥行きを感じる画像では、画像上の幾何学的な角度と、空間として感じる角度を区別することが大切です。</p>
+                            <details class="home-angle-reference">
+                                <summary>比較用の90°を見る</summary>
+                                <svg viewBox="0 0 200 112" role="img" aria-label="90度の角度の比較図">
+                                    <path d="M20 100 L100 20 L180 100" fill="none" stroke="currentColor" stroke-width="3"/>
+                                    <path d="M82 38 A25.46 25.46 0 0 0 118 38" fill="none" stroke="#126bec" stroke-width="2"/>
+                                    <text x="100" y="70" text-anchor="middle" fill="currentColor" font-size="15">90°</text>
+                                </svg>
+                                <p>この図は比較用の直角です。道路画像の正解角度を示すものではありません。</p>
+                            </details>
+                        </div>
+                    </article>
+                    <aside class="home-research-note">
+                        <div class="micro">研究へのつながり</div>
+                        <h3>遠近感と角度の知覚</h3>
+                        <p>画像上の線や角度を、人はどのように空間として解釈するのでしょうか。画像の幾何学的な情報と人が感じる空間の違いを考えることは、映像での距離感や臨場感を理解することにつながります。</p>
+                    </aside>
                 </div>
             </section>
             <section class="closing">

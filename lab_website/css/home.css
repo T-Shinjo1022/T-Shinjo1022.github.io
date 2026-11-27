@@ -1,0 +1,92 @@
+/* HOME専用：研究へのつながりと道路画像の角度錯視 */
+.home-research-note {
+    margin-top: 24px;
+    padding: 24px 28px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--blue);
+    border-radius: 14px;
+    background: var(--pale);
+}
+.home-research-note h3 {
+    margin: 6px 0 8px;
+    font-size: 19px;
+}
+.home-research-note p {
+    margin: 0;
+    color: var(--sub);
+    font-size: 14px;
+    line-height: 1.9;
+}
+.home-angle {
+    scroll-margin-top: 76px;
+}
+.home-angle-card {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 28px;
+}
+.home-angle-figure {
+    margin: 0;
+    min-width: 0;
+}
+.home-angle-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.home-angle-figure figcaption {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--sub);
+}
+.home-angle-content {
+    min-width: 0;
+}
+.home-angle-content h3 {
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.5;
+    margin: 10px 0;
+}
+.home-angle-content p {
+    font-size: 14px;
+    color: var(--sub);
+    line-height: 1.9;
+}
+.home-angle-reference {
+    border: 1px solid var(--line);
+    background: var(--pale);
+    padding: 14px 18px;
+    border-radius: 12px;
+}
+.home-angle-reference summary {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+}
+.home-angle-reference summary:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 4px;
+}
+.home-angle-reference svg {
+    display: block;
+    width: min(100%, 240px);
+    margin: 12px auto 0;
+}
+.home-angle-reference p {
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+@media (max-width: 780px) {
+    .home-angle-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 18px;
+    }
+    .home-research-note {
+        padding: 18px;
+    }
+}
