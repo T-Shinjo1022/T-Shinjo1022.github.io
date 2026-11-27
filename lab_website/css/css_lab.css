@@ -1,0 +1,389 @@
+/* Osa Laboratory — About (研究室紹介) page styles */
+
+.lab-hero {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 88% 20%, #d8ecff 0%, transparent 45%),
+                linear-gradient(160deg, #f5faff, #eef5ff 55%, #fdfefe);
+    padding: 68px 0 56px;
+    border-bottom: 1px solid #e6eef8;
+}
+
+.lab-hero h1 {
+    font-size: clamp(30px, 3.8vw, 48px);
+    letter-spacing: -0.04em;
+    line-height: 1.35;
+    margin: 20px 0 18px;
+}
+
+.lab-hero-lead {
+    color: #4d6889;
+    font-size: 15px;
+    line-height: 1.95;
+    max-width: 680px;
+    margin: 0;
+}
+
+.lab-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.lab-toc a {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 16px;
+    border-radius: 999px;
+    background: var(--white);
+    border: 1px solid #cfe2f9;
+    color: #1b64bc;
+    font-size: 12px;
+    font-weight: 800;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.lab-toc a:hover {
+    background: #eaf3ff;
+    transform: translateY(-1px);
+}
+
+.lab-section {
+    padding: 84px 0;
+    scroll-margin-top: 80px;
+}
+
+.lab-section-alt {
+    background: linear-gradient(180deg, #f7fbff 0%, #f1f7ff 100%);
+    border-top: 1px solid #e6eef8;
+    border-bottom: 1px solid #e6eef8;
+}
+
+.lab-section-head {
+    margin-bottom: 36px;
+}
+
+.lab-section-head h2 {
+    font-size: clamp(24px, 3vw, 34px);
+    letter-spacing: -0.03em;
+    line-height: 1.4;
+    margin: 10px 0 8px;
+}
+
+.lab-section-head p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.lab-card {
+    background: var(--white);
+    border: 1px solid #dce8f7;
+    border-radius: 20px;
+    box-shadow: 0 14px 36px rgba(21, 65, 131, 0.06);
+}
+
+/* 01. 目的と方針 */
+.lab-purpose-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.lab-purpose-main {
+    padding: 32px;
+}
+
+.lab-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    color: var(--blue);
+    background: #eaf3ff;
+    padding: 5px 11px;
+    border-radius: 999px;
+}
+
+.lab-purpose-main h3 {
+    font-size: 22px;
+    margin: 14px 0 12px;
+    color: var(--navy);
+}
+
+.lab-purpose-main > p {
+    font-size: 14px;
+    color: #3f5877;
+    margin: 0 0 20px;
+}
+
+.lab-note-box {
+    background: #f5f9ff;
+    border-left: 4px solid #3d9bf6;
+    border-radius: 0 12px 12px 0;
+    padding: 14px 16px;
+    font-size: 12px;
+    color: #48617c;
+}
+
+.lab-note-box strong {
+    display: block;
+    color: #145ec1;
+    margin-bottom: 4px;
+}
+
+.lab-note-box p {
+    margin: 0;
+    line-height: 1.65;
+}
+
+/* 仮画像・動画プレースホルダー */
+.lab-media-placeholder {
+    border: 2px dashed #bdd6f5;
+    border-radius: 20px;
+    background: #f4f9ff;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    text-align: center;
+    min-height: 240px;
+}
+
+.lab-media-sm {
+    border: 0;
+    border-bottom: 1px dashed #c7dcf6;
+    border-radius: 20px 20px 0 0;
+    min-height: 170px;
+}
+
+.lab-video-placeholder {
+    min-height: 280px;
+}
+
+.lab-placeholder-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #2164b8;
+    background: #e1efff;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.lab-placeholder-inner p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #506c8e;
+}
+
+.lab-placeholder-inner small {
+    display: block;
+    margin-top: 6px;
+    font-weight: 500;
+    color: #748ca8;
+}
+
+.lab-placeholder-inner code {
+    background: #e8f2ff;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* 02. 研究分野とテーマ */
+.lab-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.lab-field-card {
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lab-field-num {
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.14em;
+    color: var(--blue);
+}
+
+.lab-field-card h3 {
+    font-size: 19px;
+    margin: 8px 0 10px;
+}
+
+.lab-field-card > p {
+    font-size: 14px;
+    color: #48617c;
+    margin: 0 0 18px;
+}
+
+.lab-term {
+    margin: 0;
+    padding: 13px 15px;
+    background: #f5f9ff;
+    border-radius: 12px;
+    border: 1px solid #e1ecfb;
+}
+
+.lab-term dt {
+    font-size: 11px;
+    font-weight: 800;
+    color: #165db8;
+    margin-bottom: 4px;
+}
+
+.lab-term dd {
+    margin: 0;
+    font-size: 12px;
+    color: #58718f;
+    line-height: 1.65;
+}
+
+.lab-center-action {
+    margin-top: 32px;
+    text-align: center;
+}
+
+/* 03. 設備・研究環境 */
+.lab-env-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.lab-env-card {
+    overflow: hidden;
+}
+
+.lab-env-body {
+    padding: 22px 24px 24px;
+}
+
+.lab-env-body h3 {
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+
+.lab-env-body p {
+    font-size: 13px;
+    color: #58718f;
+    margin: 0;
+}
+
+.lab-status-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    color: #b45309;
+    background: #fef3c7;
+    padding: 2px 8px;
+    border-radius: 6px;
+    vertical-align: middle;
+}
+
+/* 04. 研究の進め方 */
+.lab-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.lab-step-card {
+    padding: 26px;
+}
+
+.lab-step-num {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.14em;
+    color: var(--white);
+    background: var(--blue);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.lab-step-card h3 {
+    font-size: 17px;
+    margin: 0 0 10px;
+}
+
+.lab-step-card p {
+    font-size: 13px;
+    color: #58718f;
+    margin: 0;
+}
+
+/* 05. 研究室の雰囲気 */
+.lab-atmo-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.lab-atmo-text {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lab-atmo-text h3 {
+    font-size: 20px;
+    margin: 0 0 12px;
+}
+
+.lab-atmo-text > p {
+    font-size: 14px;
+    color: #3f5877;
+    margin: 0 0 20px;
+}
+
+.lab-atmo-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 900px) {
+    .lab-purpose-grid,
+    .lab-atmo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-env-grid,
+    .lab-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 780px) {
+    .lab-hero {
+        padding: 48px 0 42px;
+    }
+
+    .lab-section {
+        padding: 60px 0;
+    }
+
+    .lab-fields-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-purpose-main,
+    .lab-atmo-text {
+        padding: 24px;
+    }
+}
