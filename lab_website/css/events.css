@@ -221,13 +221,14 @@
     }
 
 .events-life-img {
-    width: 100%;
+    width: auto;
+    max-width: calc(100% - 28px);
     height: auto;
-    max-height: 360px;
-    object-fit: contain;
-    background: #f5f9ff;
+    max-height: 340px;
     display: block;
-    border-bottom: 1px solid #e1eafb;
+    margin: 16px auto 4px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(28, 74, 127, 0.08);
 }
 
 .events-life-body {
