@@ -1,0 +1,77 @@
+/* アクセスページ専用CSS。共通CSSは変更せず、このファイルにページ固有の装飾をまとめる。 */
+.access-hero{position:relative;overflow:hidden;background:var(--color-navy);color:#fff;isolation:isolate}
+.access-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 45%,#2758c655,transparent 36%),linear-gradient(110deg,transparent 45%,#1b3a5a66);z-index:-1}
+.access-hero__pattern{position:absolute;inset:0;opacity:.14;background-image:linear-gradient(90deg,transparent 49px,#7890aa 50px),linear-gradient(transparent 49px,#7890aa 50px);background-size:50px 50px;mask-image:linear-gradient(90deg,transparent,#000)}
+.access-hero__inner{min-height:440px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding-block:62px}
+.access-hero__copy{position:relative;z-index:1}
+.access-hero .eyebrow{margin-bottom:22px}
+.access-hero h1{font-size:clamp(38px,5vw,64px);line-height:1.42;letter-spacing:-.055em;margin:0 0 18px;font-weight:800}
+.access-hero h1 em{font-style:normal;color:var(--color-mint)}
+.access-hero__copy>p:not(.eyebrow){color:#dce7f1;font-size:16px;margin:0 0 30px}
+.access-hero__status{display:inline-block;border:1px solid #69829d;border-radius:99px;padding:8px 13px;color:#c5d5e4;font:700 9px/1.4 Arial,sans-serif;letter-spacing:.13em}
+.access-hero__graphic{position:relative;min-height:290px;display:grid;place-items:center}
+.access-hero__ring{position:absolute;border:1px solid #8bc9dc77;border-radius:50%;aspect-ratio:1}
+.access-hero__ring--outer{width:min(85%,330px);box-shadow:0 0 0 28px #8bc9dc0b,0 0 0 56px #8bc9dc08}
+.access-hero__ring--inner{width:42%;border-style:dashed;transform:rotate(25deg)}
+.access-hero__pin{width:78px;height:78px;border-radius:50% 50% 50% 8px;transform:rotate(-45deg);background:linear-gradient(145deg,#b4f7e9,#4f9bd0);box-shadow:0 20px 50px #0005;display:grid;place-items:center}
+.access-hero__pin span{width:22px;height:22px;border-radius:50%;background:#153452;border:5px solid #e4fff8}
+.access-hero__label{position:absolute;right:2%;bottom:9%;font:800 10px/1.7 Arial,sans-serif;letter-spacing:.2em;color:#a9c4d8;text-align:right}
+.access-section__grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:65px;align-items:center}
+.access-section__heading .eyebrow{margin-bottom:16px}
+.access-section__lead{margin:19px 0 0;color:var(--color-ink-soft);font-size:14px;line-height:1.9}
+.access-info-card,.map-placeholder,.visit-note{background:#fff;border:1px solid var(--color-line);border-radius:var(--radius-card);box-shadow:var(--shadow-card)}
+.access-info-card{padding:14px 28px}
+.access-details{margin:0}
+.access-details>div{display:grid;grid-template-columns:125px 1fr;gap:18px;padding:19px 0;border-bottom:1px solid #e8eef2}
+.access-details>div:last-child{border-bottom:0}
+.access-details dt{font-size:13px;font-weight:800;color:#53677d}
+.access-details dd{margin:0;font-size:14px;overflow-wrap:anywhere}
+.needs-confirmation{color:#8a5c23;font-weight:700}
+.map-placeholder{position:relative;min-height:300px;overflow:hidden;display:grid;place-items:center;background:#eaf1f5}
+.map-placeholder__grid{position:absolute;inset:0;opacity:.55;background-image:linear-gradient(35deg,transparent 46%,#c2d4df 47%,#c2d4df 49%,transparent 50%),linear-gradient(125deg,transparent 46%,#d0dfe7 47%,#d0dfe7 49%,transparent 50%);background-size:75px 75px}
+.map-placeholder__content{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:#36536e;padding:24px}
+.map-placeholder__icon{width:48px;height:48px;border:1px solid #8da9bc;border-radius:50%;display:grid;place-items:center;font-size:25px}
+.map-placeholder__content strong{font:800 13px Arial,sans-serif;letter-spacing:.2em}
+.map-placeholder__content>span:not(.map-placeholder__icon){font-size:13px;font-weight:700}
+.map-placeholder__content small{font-size:11px;color:#7a8e9e}
+.access-section__heading--wide{max-width:650px;margin-bottom:36px}
+.transport-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.transport-card{min-height:205px;padding:24px 22px;border:1px solid #e4ebf0;border-radius:var(--radius-card);background:#fff;box-shadow:var(--shadow-card)}
+.transport-card__icon{display:inline-grid;place-items:center;width:35px;height:35px;border-radius:50%;background:#eaf2fa;color:#3765af;font:800 11px Arial,sans-serif}
+.transport-card h3{font-size:16px;margin:18px 0 10px}
+.transport-card p{font-size:13px;line-height:1.8;margin:0;overflow-wrap:anywhere}
+.visit-note{display:flex;gap:20px;align-items:flex-start;padding:28px}
+.visit-note__mark{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff1d9;color:#9a6829;font-weight:900}
+.visit-note h3{font-size:16px;margin:2px 0 9px}
+.visit-note p{font-size:13px;line-height:1.9;margin:0;overflow-wrap:anywhere}
+.access-contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;background:#183d68;color:#fff;border-radius:var(--radius-card);padding:48px 52px;position:relative;overflow:hidden}
+.access-contact:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #ffffff25;border-radius:50%;right:-115px;bottom:-210px;box-shadow:0 0 0 42px #ffffff08,0 0 0 84px #ffffff06;pointer-events:none}
+.access-contact h2{font-size:clamp(27px,3vw,38px);margin:0 0 12px}
+.access-contact>div:first-child>p:last-child{color:#d4e2ef;font-size:13px;margin:0}
+.access-contact .eyebrow{color:var(--color-mint);margin-bottom:15px}
+.access-contact__details{position:relative;z-index:1;border-left:1px solid #ffffff42;padding-left:30px}
+.access-contact__details .needs-confirmation{color:#fff0c9;font-size:14px}
+.access-contact__note{font-size:11px;color:#c1d1df;margin:12px 0 0}
+@media(max-width:900px){
+  .access-hero__inner{grid-template-columns:1fr .7fr;gap:15px;min-height:390px}
+  .access-section__grid{grid-template-columns:1fr;gap:28px}
+  .access-section__heading{max-width:680px}
+  .transport-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .access-hero__inner{grid-template-columns:1fr;min-height:unset;padding-block:56px 28px}
+  .access-hero__graphic{min-height:190px;margin-top:-8px}
+  .access-hero__ring--outer{width:190px}
+  .access-hero__ring--inner{width:95px}
+  .access-hero__pin{width:58px;height:58px}
+  .access-hero__pin span{width:18px;height:18px}
+  .access-hero__label{right:8%;bottom:0}
+  .access-info-card{padding:8px 18px}
+  .access-details>div{grid-template-columns:1fr;gap:5px;padding:15px 0}
+  .map-placeholder{min-height:245px}
+  .transport-grid{grid-template-columns:1fr}
+  .transport-card{min-height:unset}
+  .visit-note{padding:21px}
+  .access-contact{grid-template-columns:1fr;gap:25px;padding:32px 24px}
+  .access-contact__details{border-left:0;border-top:1px solid #ffffff42;padding:22px 0 0}
+}
