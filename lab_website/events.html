@@ -69,21 +69,11 @@
                     <div class="section-head">
                         <div class="micro">01 / EVENT HIGHLIGHTS</div>
                         <h2>主な<span class="blue-span">イベント一覧</span></h2>
-                        <p>研究発表の機会と、メンバー同士の交流を深める年間イベントの概要です。</p>
+                        <p>メンバー同士の交流を深める年間イベントの概要です。</p>
                     </div>
 
                     <div class="events-highlight-grid">
-                        <!-- 差し替え箇所：イベントカード1（確定情報に置き換え） -->
-                        <article class="events-card">
-                            <div class="events-card-meta">
-                                <span class="events-badge events-badge-academic">学会・発表</span>
-                                <time class="events-date">[要確認：開催年月]</time>
-                            </div>
-                            <h3>学会での研究発表 [要確認]</h3>
-                            <p>研究成果を学外の場で発表し、他大学・研究機関の研究者と意見交換を行います。（※学会とは、研究者同士が最新の成果を発表・議論する場です）</p>
-                        </article>
-
-                        <!-- 差し替え箇所：イベントカード2（確定情報に置き換え） -->
+                        <!-- 差し替え箇所：イベントカード1（山登り） -->
                         <article class="events-card">
                             <div class="events-card-meta">
                                 <span class="events-badge events-badge-life">研究室行事</span>
@@ -93,7 +83,7 @@
                             <p>研究の合間に自然の中でリフレッシュし、学年を超えた親睦を深める行事です。[要確認：詳細内容]</p>
                         </article>
 
-                        <!-- 差し替え箇所：イベントカード3（確定情報に置き換え） -->
+                        <!-- 差し替え箇所：イベントカード2（バドミントン） -->
                         <article class="events-card">
                             <div class="events-card-meta">
                                 <span class="events-badge events-badge-life">研究室行事</span>
@@ -103,7 +93,17 @@
                             <p>体を動かしながらメンバー同士で交流するスポーツイベントです。[要確認：開催頻度・詳細]</p>
                         </article>
 
-                        <!-- 差し替え箇所：イベントカード4（確定情報に置き換え） -->
+                        <!-- 差し替え箇所：イベントカード3（ボウリング） -->
+                        <article class="events-card">
+                            <div class="events-card-meta">
+                                <span class="events-badge events-badge-life">研究室行事</span>
+                                <time class="events-date">[要確認：開催年月]</time>
+                            </div>
+                            <h3>ボウリング大会・交流会 [要確認]</h3>
+                            <p>研究室メンバーで集まり、ボウリングを通じて親睦を深めるレクリエーション行事です。[要確認：詳細内容]</p>
+                        </article>
+
+                        <!-- 差し替え箇所：イベントカード4（年間行事） -->
                         <article class="events-card">
                             <div class="events-card-meta">
                                 <span class="events-badge events-badge-life">年間行事</span>
@@ -131,10 +131,6 @@
                             <div class="events-media-placeholder" role="img" aria-label="学会発表の仮画像枠">
                                 <span>[要確認：学会発表写真]<br><small>images/events/ へ配置後に差し替え</small></span>
                             </div>
-                            <!--
-                            【写真入手後の差し替え例】
-                            <img class="events-academic-img" src="images/events/conference-01.jpg" alt="〇〇学会でポスター発表を行う学生の様子">
-                            -->
                             <div class="events-academic-body">
                                 <div class="events-card-meta">
                                     <span class="events-badge events-badge-academic">研究発表</span>
@@ -197,7 +193,17 @@
                             </div>
                         </article>
 
-                        <!-- 差し替え箇所：研究室行事3（年間行事） -->
+                        <!-- 差し替え箇所：研究室行事3（ボウリング・写真反映済み） -->
+                        <article class="events-life-card">
+                            <img class="events-life-img" src="images/events/bowling.jpg" alt="研究室メンバーでボウリングを楽しんでいる様子">
+                            <div class="events-life-body">
+                                <span class="events-date">[要確認：実施時期]</span>
+                                <h3>ボウリング</h3>
+                                <p>[要確認：実施場所や当日の様子についての説明文。]</p>
+                            </div>
+                        </article>
+
+                        <!-- 差し替え箇所：研究室行事4（年間行事） -->
                         <article class="events-life-card">
                             <div class="events-media-placeholder events-media-square" role="img" aria-label="年間行事の仮画像枠">
                                 <span>[要確認：年間行事の写真]<br><small>公開許可確認後に掲載</small></span>
@@ -328,7 +334,7 @@
             </div>
         </footer>
 
-        <!-- スマホ用ハンバーガーメニュー開閉（main.jsはHOME専用要素を参照してエラーになるため、ここではメニュー制御のみ安全に記述） -->
+        <!-- スマホ用ハンバーガーメニュー開閉 -->
         <script>
             const nav = document.getElementById('navigation');
             const menu = document.getElementById('menuButton');
