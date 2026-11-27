@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101928">
+  <meta name="description" content="研究室へのアクセス情報をご案内します。所在地・交通手段などは確認後に掲載します。">
+  <title>アクセス | VISUAL LAB（制作中）</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/access.css">
+  <script src="js/common.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- 共通ヘッダー：既存 index.html のマークアップを再利用 -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner container">
+      <a class="site-logo" href="index.html" aria-label="研究室ホームページのトップへ">
+        <span class="site-logo__mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="site-logo__name"><strong>VISUAL LAB</strong><small>研究室ホームページ <span class="site-logo__draft">制作中</span></small></span>
+      </a>
+      <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="メインナビゲーション">
+        <a href="index.html">HOME</a>
+        <a href="about.html" data-planned>研究室紹介</a>
+        <a href="seminar/index.html">研究・ゼミ</a>
+        <a href="members.html" data-planned>メンバー</a>
+        <a href="events.html" data-planned>イベント</a>
+        <a href="join.html" class="site-nav__cta" data-planned>配属希望の方へ <span aria-hidden="true">↗</span></a>
+        <a href="access.html" aria-current="page">アクセス</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="access-hero" aria-labelledby="access-title">
+      <div class="access-hero__pattern" aria-hidden="true"></div>
+      <div class="container access-hero__inner">
+        <div class="access-hero__copy">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span> ACCESS / 08</p>
+          <h1 id="access-title">研究室への一歩を、<br><em>ここから。</em></h1>
+          <p>研究室への訪問方法をご案内します。</p>
+          <span class="access-hero__status">ACCESS INFORMATION / UNDER PREPARATION</span>
+        </div>
+        <div class="access-hero__graphic" aria-hidden="true">
+          <div class="access-hero__ring access-hero__ring--outer"></div>
+          <div class="access-hero__ring access-hero__ring--inner"></div>
+          <div class="access-hero__pin"><span></span></div>
+          <div class="access-hero__label">YOUR<br>DESTINATION</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access-section" aria-labelledby="address-title">
+      <div class="container access-section__grid">
+        <div class="access-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> 01 / LOCATION</p>
+          <h2 class="section-title" id="address-title">所在地・建物</h2>
+          <p class="access-section__lead">研究室の所在地と建物情報をご案内します。</p>
+        </div>
+        <div class="access-info-card">
+          <dl class="access-details">
+            <div><dt>大学名</dt><dd><span class="needs-confirmation">[要確認]</span></dd></div>
+            <div><dt>住所</dt><dd><span class="needs-confirmation">[要確認：郵便番号・住所]</span></dd></div>
+            <div><dt>建物・部屋</dt><dd><span class="needs-confirmation">[要確認：建物名・棟・階・部屋番号]</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint access-section" aria-labelledby="map-title">
+      <div class="container access-section__grid">
+        <div class="access-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> 02 / MAP</p>
+          <h2 class="section-title" id="map-title">アクセスマップ</h2>
+          <p class="access-section__lead">所在地を確認できる地図を掲載する予定です。</p>
+        </div>
+        <div class="map-placeholder" role="img" aria-label="地図の掲載予定位置。所在地と地図URLは確認中です。">
+          <div class="map-placeholder__grid" aria-hidden="true"></div>
+          <div class="map-placeholder__content">
+            <span class="map-placeholder__icon" aria-hidden="true">＋</span>
+            <strong>MAP</strong>
+            <span>地図をここに掲載します</span>
+            <small>[要確認：公式地図URL・埋め込み可否]</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access-section" aria-labelledby="transport-title">
+      <div class="container">
+        <div class="access-section__heading access-section__heading--wide">
+          <p class="eyebrow"><span class="eyebrow__line"></span> 03 / TRANSPORTATION</p>
+          <h2 class="section-title" id="transport-title">公共交通機関</h2>
+          <p class="access-section__lead">最寄り駅やバスなど、確認済みの交通案内を掲載します。</p>
+        </div>
+        <div class="transport-grid">
+          <article class="transport-card">
+            <span class="transport-card__icon" aria-hidden="true">01</span>
+            <h3>電車でお越しの場合</h3>
+            <p class="needs-confirmation">[要確認：最寄り駅・所要時間・経路]</p>
+          </article>
+          <article class="transport-card">
+            <span class="transport-card__icon" aria-hidden="true">02</span>
+            <h3>バスでお越しの場合</h3>
+            <p class="needs-confirmation">[要確認：利用するバス・最寄り停留所・所要時間]</p>
+          </article>
+          <article class="transport-card">
+            <span class="transport-card__icon" aria-hidden="true">03</span>
+            <h3>その他の交通手段</h3>
+            <p class="needs-confirmation">[要確認：徒歩・自動車などの案内]</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint access-section" aria-labelledby="visit-title">
+      <div class="container access-section__grid">
+        <div class="access-section__heading">
+          <p class="eyebrow"><span class="eyebrow__line"></span> 04 / VISIT</p>
+          <h2 class="section-title" id="visit-title">訪問時の注意</h2>
+          <p class="access-section__lead">安心して訪問していただくための案内を掲載します。</p>
+        </div>
+        <div class="visit-note">
+          <span class="visit-note__mark" aria-hidden="true">!</span>
+          <div>
+            <h3>訪問前にご確認ください</h3>
+            <p class="needs-confirmation">[要確認：事前連絡の要否・訪問可能な日時・入館方法など]</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section access-section" aria-labelledby="contact-title">
+      <div class="container access-contact">
+        <div>
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__line"></span> 05 / CONTACT</p>
+          <h2 id="contact-title">お問い合わせ</h2>
+          <p>訪問やアクセスについての問い合わせ先を掲載します。</p>
+        </div>
+        <div class="access-contact__details">
+          <p class="needs-confirmation">[要確認：公開可能な問い合わせ窓口・連絡先]</p>
+          <p class="access-contact__note">※ 連絡先は公開可否を確認してから掲載します。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 共通フッター：既存 index.html のマークアップを再利用 -->
+  <footer class="site-footer">
+    <div class="container site-footer__main"><div><a class="site-footer__brand" href="index.html">VISUAL LAB <span>／ 研究室ホームページ</span></a><p>視覚・映像・感性デザインを、もっと身近に。</p><small>※ 正式な研究室名・所属・連絡先は確認後に掲載します。</small></div><nav aria-label="フッターナビゲーション"><a href="index.html">HOME</a><a href="about.html" data-planned>研究室紹介</a><a href="seminar/index.html">研究・ゼミ</a><a href="members.html" data-planned>メンバー</a><a href="events.html" data-planned>イベント</a><a href="join.html" data-planned>配属希望の方へ</a><a href="access.html" aria-current="page">アクセス</a></nav></div>
+    <div class="container site-footer__bottom"><span>© VISUAL LAB (working draft)</span><span>DESIGN FOUNDATION / 2026</span></div>
+  </footer>
+  <div class="toast" id="planned-toast" role="status" aria-live="polite" aria-atomic="true" hidden>このページは制作予定です。次のゼミで担当者が作成します。</div>
+</body>
+</html>
