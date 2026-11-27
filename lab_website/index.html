@@ -33,7 +33,7 @@
                         <p>同じ大きさなのに、違って見える。<br>同じ角度でも、周囲の情報によって印象が変わる。<br>「見る」という身近な不思議から、私たちは人の知覚と映像の可能性を探ります。</p>
                         <div class="hero-actions">
                             <a class="btn-primary" href="#experience">錯視を体験する <span aria-hidden="true">↗</span></a>
-                            <a class="btn-ghost" href="#angle-illusion">角度の錯視を見る ↓</a>
+                            <a class="btn-ghost" href="#angle-illusion">長錯視を体験する ↓</a>
                         </div>
                         <div class="scroll-hint">SCROLL TO EXPLORE</div>
                     </div>
@@ -124,28 +124,24 @@
             <section class="section more home-angle" id="angle-illusion">
                 <div class="container">
                     <div class="section-head">
-                        <div class="micro">02 / ANGLE PERCEPTION</div>
+                        <div class="micro">02 / 長錯視（おささくし）</div>
                         <h2>この角度、<span class="blue-span">何度に見えますか？</span></h2>
-                        <p>道路の奥行きや周囲の風景を手がかりに、画像に示された角度を考えてみましょう。</p>
+                        <p>道路の奥行きや周囲の風景を手がかりに、道路の左右の境界が作る角度は、何度に見えるでしょうか。</p>
                     </div>
                     <article class="exp-card home-angle-card">
                         <figure class="home-angle-figure">
-                            <img src="images/home/road-angle.png" width="400" height="275" alt="奥へ伸びる道路の写真。手前に黒い弧と疑問符が描かれている。">
-                            <figcaption>道路画像に示された黒い弧の角度に注目してください。</figcaption>
+                            <img id="roadAngleImage" src="images/home/road-angle.png" width="2048" height="1151" alt="道路の写真。曲線と疑問符で角度を示しています。">
+                            <figcaption id="roadAngleCaption" aria-live="polite">道路の左右の境界が作る角度を予想してください。</figcaption>
                         </figure>
                         <div class="home-angle-content">
-                            <div class="micro">角度の錯視</div>
+                            <div class="micro">長錯視（おささくし）</div>
                             <h3>鋭角？ 直角？ それとも鈍角？</h3>
                             <p>まずは直感で考えてみてください。道路のように奥行きを感じる画像では、画像上の幾何学的な角度と、空間として感じる角度を区別することが大切です。</p>
-                            <details class="home-angle-reference">
-                                <summary>比較用の90°を見る</summary>
-                                <svg viewBox="0 0 200 112" role="img" aria-label="90度の角度の比較図">
-                                    <path d="M20 100 L100 20 L180 100" fill="none" stroke="currentColor" stroke-width="3"/>
-                                    <path d="M82 38 A25.46 25.46 0 0 0 118 38" fill="none" stroke="#126bec" stroke-width="2"/>
-                                    <text x="100" y="70" text-anchor="middle" fill="currentColor" font-size="15">90°</text>
-                                </svg>
-                                <p>この図は比較用の直角です。道路画像の正解角度を示すものではありません。</p>
-                            </details>
+                            <button type="button" class="btn-primary" id="roadAngleToggle" aria-controls="roadAngleImage roadAngleAnswer" aria-expanded="false">答えを見る →</button>
+                            <div class="home-angle-answer" id="roadAngleAnswer" hidden>
+                                <strong>約110°</strong>
+                                <p>道路の左右の境界に沿って補助線を引くと、画像上の角度は約110°です。実際の道路の角度ではなく、写真上の角度です。</p>
+                            </div>
                         </div>
                     </article>
                     <aside class="home-research-note">

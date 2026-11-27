@@ -55,30 +55,19 @@
     color: var(--sub);
     line-height: 1.9;
 }
-.home-angle-reference {
+.home-angle-answer {
+    margin-top: 18px;
+    padding: 16px 20px;
     border: 1px solid var(--line);
-    background: var(--pale);
-    padding: 14px 18px;
     border-radius: 12px;
+    background: var(--pale);
 }
-.home-angle-reference summary {
+.home-angle-answer strong {
+    font-size: 32px;
     color: var(--blue);
-    font-weight: 800;
-    font-size: 14px;
-    cursor: pointer;
 }
-.home-angle-reference summary:focus-visible {
-    outline: 3px solid var(--sky);
-    outline-offset: 4px;
-}
-.home-angle-reference svg {
-    display: block;
-    width: min(100%, 240px);
-    margin: 12px auto 0;
-}
-.home-angle-reference p {
-    font-size: 12px;
-    margin: 8px 0 0;
+.home-angle-answer p {
+    margin: 4px 0 0;
 }
 @media (max-width: 780px) {
     .home-angle-card {
