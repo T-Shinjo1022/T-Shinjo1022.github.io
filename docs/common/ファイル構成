@@ -1,6 +1,6 @@
 lab-website/
 ├── index.html
-├── about.html
+├── lab.html
 ├── members.html
 ├── seminar.html
 ├── events.html
@@ -17,7 +17,7 @@ lab-website/
 ├── css/
 │   ├── common.css
 │   ├── home.css
-│   ├── about.css
+│   ├── lab.css
 │   ├── members.css
 │   ├── events.css
 │   ├── join.css
@@ -35,7 +35,7 @@ lab-website/
 │   └── home.js
 ├── images/
 │   ├── home/
-│   ├── about/
+│   ├── lab/
 │   ├── members/
 │   ├── events/
 │   ├── join/
